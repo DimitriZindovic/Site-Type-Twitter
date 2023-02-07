@@ -1,0 +1,46 @@
+.card-post {
+  border: 0.5px solid rgb(41, 41, 41);
+  padding: 2%;
+  width: 100%;
+}
+
+.description-profil {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2%;
+}
+
+.post-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.h4-pseudo {
+  color: #b8b8b8;
+  font-size: larger;
+}
+
+.h3-post {
+  font-size: x-large;
+}
+
+.tag {
+  color: var(--color-app);
+}
+
+.tag-select {
+  color: red;
+}
+
+#icon-bin {
+  display: flex;
+  justify-content: flex-end;
+  filter: invert(67%) sepia(30%) saturate(222%) hue-rotate(314deg)
+    brightness(84%) contrast(92%);
+}
+
+@media (max-width: 768px) {
+  .card-post {
+    padding-bottom: 5%;
+  }
+}

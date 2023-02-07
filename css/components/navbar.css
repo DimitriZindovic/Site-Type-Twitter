@@ -1,0 +1,60 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: var(--color-navbar);
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+  margin: 20ppx;
+}
+
+.nav-bar ul li {
+  display: block;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-app);
+    margin: 8px 0;
+  }
+
+  .nav-bar {
+    height: 250px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: var(--color-navbar);
+    transition: 0.2s;
+  }
+
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .nav-bar ul li {
+    margin-bottom: 20px;
+  }
+}

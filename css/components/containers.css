@@ -1,0 +1,87 @@
+.container-btn {
+  display: flex;
+  gap: 1rem;
+  margin-right: 5%;
+}
+
+.container-post-settings {
+  display: flex;
+  background-color: var(--color-post);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.container-settings-add {
+  background-color: var(--color-settings);
+  width: 30%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-tags {
+  display: flex;
+  font-weight: 700;
+}
+
+.tag-list {
+  padding: 5px;
+  color: var(--color-app);
+}
+
+.container-settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-post {
+  margin-top: 150%;
+}
+
+.container-post {
+  width: 70%;
+}
+
+.container-post {
+  font-size: large;
+  padding: 2%;
+  background-color: #4e4e4e;
+}
+
+.container-description {
+  background-color: var(--color-settings);
+  padding-top: 5%;
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-bottom: 5%;
+  color: var(--color-text);
+  border-top: 10px solid #4e4e4e;
+}
+
+.container-login {
+  background-color: var(--color-settings);
+  color: var(--color-text);
+}
+
+.container-dark {
+  background-color: var(--color-settings);
+}
+
+.container-form {
+  background-color: var(--color-post);
+}
+
+@media (max-width: 768px) {
+  .container-description {
+    padding-top: 10%;
+  }
+
+  .container-settings-add {
+    display: none;
+  }
+
+  .container-post {
+    width: 100%;
+    height: 100%;
+  }
+}

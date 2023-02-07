@@ -1,0 +1,101 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-create-account {
+  color: var(--color-text);
+  background-color: var(--color-app);
+  border: 2px solid var(--color-app);
+  border-radius: 6px;
+  padding: 8px;
+  outline: none;
+}
+
+.btn-create-account:hover {
+  color: var(--color-app);
+  background-color: var(--color-navbar);
+  border: 2px solid var(--color-app);
+  border-radius: 6px;
+  padding: 8px;
+  transition: all 1s;
+  outline: none;
+}
+
+.btn-account {
+  color: var(--color-app);
+  background-color: var(--color-navbar);
+  border: 2px solid var(--color-app);
+  border-radius: 6px;
+  padding: 8px;
+  outline: none;
+}
+
+.btn-account:hover {
+  color: var(--color-text);
+  background-color: var(--color-app);
+  border: 2px solid var(--color-app);
+  border-radius: 6px;
+  padding: 8px;
+  transition: all 1s;
+  outline: none;
+}
+
+.btn-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 4%;
+  background-color: var(--color-navbar);
+  color: var(--color-app);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btn-settings:hover {
+  background-color: rgb(66, 66, 66);
+  color: var(--color-text);
+}
+
+.change-color {
+  filter: invert(77%) sepia(23%) saturate(584%) hue-rotate(133deg)
+    brightness(89%) contrast(86%);
+}
+
+#showModal {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 75px;
+  height: 75px;
+  background-color: var(--color-navbar);
+  border-radius: 50%;
+  border: 2px solid var(--color-app);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#floating-btn:hover {
+  border: 2px solid var(--color-app);
+}
+
+@keyframes changing-color {
+  25% {
+    background-color: #090979;
+  }
+
+  50% {
+    background-color: #094379;
+  }
+
+  75% {
+    background-color: #43798d;
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SocialUp</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="modal">
+      <dialog id="modalAdd">
+        <form class="modal-add">
+          <h2>Ajouter un post</h2>
+          <textarea name="textarea" rows="10" cols="50"></textarea>
+          <div>
+            <button id="cancel-btn" value="cancel">Annuler</button>
+            <button id="confirm-btn" value="default">Poster</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <div class="modal">
+      <dialog id="modalLogin">
+        <form class="modal-sup">
+          <h2>Vous devez soit :</h2>
+          <div>
+            <button class="btn-create-account" value="cancel">
+              <a href="account.html">Créer votre compte</a>
+            </button>
+            <button class="btn-account" value="default">
+              <a href="login.html">Connectez-vous</a>
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <div class="modal">
+      <dialog id="modalSup">
+        <form class="modal-sup">
+          <h2>Voulez-vous retirer ce post</h2>
+          <div>
+            <button id="cancel-btn" value="cancel">Non</button>
+            <button id="confirm-btn" value="default">Oui</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <button id="showModal">
+      <img
+        src="images/icon-add.png"
+        alt="Ajouter un post"
+        class="change-color"
+      />
+    </button>
+    <header>
+      <img src="images/name-socialup.png" alt="Logo" />
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <button class="btn-create-account">
+              <a href="profil.html">Voir votre profil</a>
+            </button>
+          </li>
+          <li>
+            <button class="btn-account">
+              <a href="login.html">Connectez-vous</a>
+            </button>
+          </li>
+          <li>
+            <button class="btn-create-account">
+              <a href="login.html">Créer votre compte</a>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container-post-settings">
+        <div class="container-settings-add">
+          <div class="container-settings">
+            <button class="btn-settings">
+              <img
+                src="images/icon-settings.png"
+                alt="Boutton de paramètres"
+                class="change-color"
+              />
+              Vos paramètres
+            </button>
+          </div>
+        </div>
+        <div class="container-post">
+          <div class="container-tags">
+            <h4 class="tag-list">Sport</h4>
+            <h4 class="tag-list-1 tag-list">Film</h4>
+            <h4 class="tag-list">Culture</h4>
+            <h4 class="tag-list">Social</h4>
+            <h4 class="tag-list">Evenements</h4>
+          </div>
+          <div class="container-tags">
+            <h4 class="tag-list">Série</h4>
+            <h4 class="tag-list">Art</h4>
+            <h4 class="tag-list">Animaux</h4>
+            <h4 class="tag-list">Nature</h4>
+            <h4 class="tag-list-2 tag-list">France</h4>
+          </div>
+          <br />
+          <div class="card-post">
+            <div class="description-profil">
+              <div class="post">
+                <div class="avatar">
+                  <img
+                    src="images/image-profil-tennis.jpeg"
+                    alt="Avatar de profil"
+                  />
+                </div>
+              </div>
+              <div class="post-description">
+                <h3 class="h3-post">Alan Burns</h3>
+                <h4 class="h4-pseudo">@AlanBurns</h4>
+              </div>
+            </div>
+            <p>
+              <span class="tag">Sport</span> Super Match de tennis entre Novak
+              Djokovic et Taylor Fritz aux Atp Finals, resumer du match :
+            </p>
+            <div class="post-link">
+              <a href="https://www.youtube.com/watch?v=f-urHADaBjU&t=1s"
+                >https://www.youtube.com/watch?v=f-urHADaBjU&t=1s</a
+              >
+            </div>
+            <div id="icon-bin">
+              <img src="images/icon-bin.png" alt="Supression d'un post" />
+            </div>
+          </div>
+          <div class="card-post">
+            <div class="description-profil">
+              <div class="post">
+                <div class="avatar">
+                  <img src="images/image-mario.jpeg" alt="Avatar de profil" />
+                </div>
+              </div>
+              <div class="post-description">
+                <h3 class="h3-post">Mike Jordan</h3>
+                <h4 class="h4-pseudo">@MikeJordan</h4>
+              </div>
+            </div>
+            <p>
+              <span class="tag-1 tag">Film</span> Regarder la bande annonce du
+              nouveau Illumination Super Mario Bros. le film :
+            </p>
+            <div class="post-link">
+              <a href="https://www.youtube.com/watch?v=f-urHADaBjU&t=1s"
+                >https://www.youtube.com/watch?v=f-urHADaBjU&t=1s</a
+              >
+            </div>
+            <div id="icon-bin">
+              <img src="images/icon-bin.png" alt="Supression d'un post" />
+            </div>
+          </div>
+          <div class="card-post">
+            <div class="description-profil">
+              <div class="post">
+                <div class="avatar">
+                  <img src="images/image-foot.jpeg" alt="Avatar de profil" />
+                </div>
+              </div>
+              <div class="post-description">
+                <h3 class="h3-post">Julien Pichon</h3>
+                <h4 class="h4-pseudo">@JulienPichon</h4>
+              </div>
+            </div>
+            <p>
+              <span class="tag-2 tag">France</span> Hâte de la finale de la cdm
+              2022. Allez les bleus !!!
+            </p>
+            <div id="icon-bin">
+              <img src="images/icon-bin.png" alt="Supression d'un post" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

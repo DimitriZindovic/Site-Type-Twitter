@@ -1,0 +1,44 @@
+.container-avatar {
+  position: relative;
+  padding-left: 10%;
+  height: 200px;
+  background-image: url("https://hamptonracquet.com/wp-content/uploads/2016/02/large-banner-tennis.jpg");
+}
+
+.h3-profil {
+  color: var(--color-text);
+  background-color: var(--color-app);
+  padding: 2%;
+  width: 15%;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.h2-profil {
+  color: var(--color-text);
+  background-color: var(--color-settings);
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+  .h3-profil {
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .h2-profil {
+    padding-left: 40%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .h3-profil {
+    width: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("components/containers.css");
+@import url("components/profil.css");
+@import url("components/buttons.css");
+@import url("components/avatar.css");
+@import url("components/navbar.css");
+@import url("components/section.css");
+@import url("components/post.css");
+@import url("components/bootrsap.css");
+@import url("components/modal.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh inherit;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: white;
+}
+
+:root {
+  --color-navbar: #292929;
+  --color-app: #74bfc2;
+  --color-text: white;
+  --color-settings: #323232;
+  --color-post: #414141;
+}
