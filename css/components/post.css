@@ -10,11 +10,6 @@
   padding-bottom: 2%;
 }
 
-.post-description {
-  display: flex;
-  flex-direction: column;
-}
-
 .h4-pseudo {
   color: #b8b8b8;
   font-size: larger;
@@ -35,8 +30,6 @@
 #icon-bin {
   display: flex;
   justify-content: flex-end;
-  filter: invert(67%) sepia(30%) saturate(222%) hue-rotate(314deg)
-    brightness(84%) contrast(92%);
 }
 
 @media (max-width: 768px) {

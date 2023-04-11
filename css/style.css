@@ -8,6 +8,8 @@
 @import url("components/post.css");
 @import url("components/bootrsap.css");
 @import url("components/modal.css");
+@import url("components/tag-list.css");
+@import url("components/icon.css");
 
 * {
   padding: 0;

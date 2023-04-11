@@ -6,13 +6,27 @@ header {
   background-color: var(--color-navbar);
 }
 
+.logo {
+  margin-left: 5px;
+}
+
 .hamburger {
   display: none;
 }
 
+.nav-bar {
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s;
+}
+
+.nav-bar.active {
+  height: 250px;
+}
+
 .nav-bar ul {
   display: flex;
-  margin: 20ppx;
 }
 
 .nav-bar ul li {
@@ -33,17 +47,16 @@ header {
     height: 3px;
     background-color: var(--color-app);
     margin: 8px 0;
+    transition: transform 0.2s, opacity 0.2s;
   }
 
   .nav-bar {
-    height: 250px;
     position: absolute;
     top: 70px;
     left: 0;
     right: 0;
     width: 100vw;
     background-color: var(--color-navbar);
-    transition: 0.2s;
   }
 
   .nav-bar ul {
@@ -56,5 +69,25 @@ header {
 
   .nav-bar ul li {
     margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .nav-bar {
+    display: flex;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .nav-bar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar ul li {
+    margin: 0;
+    margin-right: 20px;
   }
 }
