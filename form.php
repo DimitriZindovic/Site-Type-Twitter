@@ -6,11 +6,12 @@ if ($_POST['pseudo'] != " " && $_POST['password'] != " ") {
         'nom' => $_POST['nom'],
         'prenom' => $_POST['prenom'],
         'pseudo' => $_POST['pseudo'],
+        'image_profil' => $_POST['image_profil'],
         'email' => $_POST['email'],
         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
     ];
 
-    $requete = $database->prepare('INSERT INTO users(nom, prenom, pseudo, email, password) VALUES (:nom, :prenom, :pseudo, :email, :password)');
+    $requete = $database->prepare('INSERT INTO users(nom, prenom, pseudo, image_profil, email, password) VALUES (:nom, :prenom, :pseudo, :image_profil, :email, :password)');
     $requete->execute($data);
 
     if ($requete) {

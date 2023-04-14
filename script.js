@@ -5,11 +5,8 @@ tagList.forEach((list) => {
     if (e.target.classList.contains("tag-list")) {
       const tags = document.querySelectorAll(".tag");
       tags.forEach((t) => {
-        t.style.color = "red";
+        t.classList.add("tag-select");
       });
-      const tag = e.target;
-      const tagName = tag.textContent;
-      const postTags = document.querySelectorAll(".tag");
     }
   });
 });

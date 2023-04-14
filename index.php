@@ -97,23 +97,24 @@
             <div class="card-post">
               <div class="post">
                 <div class="post-description">
+                  <img style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
+                  <p>
+                    <?php echo $post['pseudo']; ?>
+                  </p>
                 </div>
-              </div>
-              <br>
-              <p>
-                <span class="tag">
-                  <?php echo $post['tag']; ?>
-                </span>
-                <?php echo $post['content']; ?>
-              </p>
-              <p>
-                Posté par
-                <?php echo $post['pseudo']; ?> le
-                <?php echo $post['date']; ?>
-              </p>
-              <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
-              <div id="icon-cross">
-                <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
+                <br>
+                <p>
+                  <span class="tag">
+                    <?php echo $post['tag']; ?>
+                  </span>
+                  <?php echo $post['content']; ?>
+                </p>
+                <br>
+                <p>
+                  <?php echo $post['date']; ?>
+                </p>
+                <br>
+                <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
               </div>
             </div>
           <?php } ?>
@@ -225,23 +226,25 @@
             <div class="card-post">
               <div class="post">
                 <div class="post-description">
-
-                  <br>
+                  <img style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
                   <p>
-                    <span class="tag">
-                      <?php echo $post['tag']; ?>
-                    </span>
-                    <?php echo $post['content']; ?>
+                    <?php echo $post['pseudo']; ?>
                   </p>
-                  <p>
-                    Posté par
-                    <?php echo $post['pseudo']; ?> le
-                    <?php echo $post['date']; ?>
-                  </p>
-                  <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
-                  <div id="icon-cross">
-                    <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
-                  </div>
+                </div>
+                <br>
+                <p>
+                  <span class="tag">
+                    <?php echo $post['tag']; ?>
+                  </span>
+                  <?php echo $post['content']; ?>
+                </p>
+                <br>
+                <p>
+                  <?php echo $post['date']; ?>
+                </p>
+                <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
+                <div id="icon-cross">
+                  <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
                 </div>
               </div>
             </div>

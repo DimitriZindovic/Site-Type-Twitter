@@ -23,6 +23,11 @@
   color: var(--color-app);
 }
 
+.post-description {
+  display: flex;
+  gap: 1rem;
+}
+
 .tag-select {
   color: red;
 }
