@@ -8,5 +8,5 @@ $data = [
 $requete = $database->prepare('DELETE FROM post WHERE id_post = :id');
 $requete->execute($data);
 
-header("Location: index.php");
+header("Location: profil.php");
 ?>
