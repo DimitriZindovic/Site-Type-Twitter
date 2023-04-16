@@ -243,9 +243,15 @@
                   <?php echo $post['date']; ?>
                 </p>
                 <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
-                <div id="icon-cross">
-                  <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
-                </div>
+                <?php
+                if ($_SESSION['id'] == $post['user_id']) {
+                  ?>
+                  <div id="icon-cross">
+                    <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
+                  </div>
+                  <?php
+                }
+                ?>
               </div>
             </div>
             <div class="modal">
