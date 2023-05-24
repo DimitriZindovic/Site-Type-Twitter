@@ -2,6 +2,7 @@
   border: 0.5px solid rgb(41, 41, 41);
   padding: 2%;
   width: 100%;
+  display: block;
 }
 
 .description-profil {
@@ -26,15 +27,6 @@
 .post-description {
   display: flex;
   gap: 1rem;
-}
-
-.tag-select {
-  color: red;
-}
-
-#icon-bin {
-  display: flex;
-  justify-content: flex-end;
 }
 
 @media (max-width: 768px) {

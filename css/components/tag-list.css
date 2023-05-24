@@ -1,22 +1,25 @@
 .dropdown {
-  display: inline-block;
+  display: inline-grid;
+  position: relative;
 }
 
 .dropdown-content {
   display: none;
-  position: relative;
+  position: absolute;
+  grid-template-columns: auto;
+  gap: 5px;
+  background-color: var(--color-navbar);
+  padding: 5px;
   z-index: 1;
 }
 
 .dropdown-content a {
   color: var(--color-app);
-  background-color: var(--color-navbar);
-  padding: 5px 5px;
   text-decoration: none;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: grid;
 }
 
 .dropbtn {
@@ -26,6 +29,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 select {
@@ -46,4 +50,8 @@ select option {
 
 select:focus {
   outline: none;
+}
+
+.selected {
+  color: red;
 }

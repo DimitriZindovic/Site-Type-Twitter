@@ -17,6 +17,7 @@
   padding: 2%;
   display: flex;
   flex-direction: column;
+  margin-top: 74px;
 }
 
 .container-tags {
@@ -27,6 +28,7 @@
 .container-settings {
   display: flex;
   flex-direction: column;
+  height: 540px;
 }
 
 .add-post {
@@ -40,6 +42,7 @@
   font-size: large;
   padding: 2%;
   background-color: #4e4e4e;
+  margin-top: 74px;
 }
 
 .container-description {
@@ -78,5 +81,19 @@
   .container-post {
     width: 100%;
     height: 100%;
+    margin-top: 74px;
   }
+}
+
+.container-tag-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-avatar {
+  position: relative;
+  padding-left: 10%;
+  height: 200px;
+  padding-top: 40px;
+  background-image: url("https://hamptonracquet.com/wp-content/uploads/2016/02/large-banner-tennis.jpg");
 }

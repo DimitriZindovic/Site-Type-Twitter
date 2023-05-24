@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SocialUp</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="shortcut icon" href="images/logo-socialup.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/logo-socialup.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -23,12 +23,8 @@
         <form class="modal-sup">
           <h2>Vous devez soit :</h2>
           <div>
-            <button class="btn-create-account" value="cancel">
-              <a href="account.php">Créer votre compte</a>
-            </button>
-            <button class="btn-account" value="default">
-              <a href="login.php">Connectez-vous</a>
-            </button>
+            <a href="account.php" class="btn-create-account">Créer votre compte</a>
+            <a href="login.php" class="btn-account">Connectez-vous</a>
           </div>
         </form>
       </dialog>
@@ -45,14 +41,10 @@
       <nav class="nav-bar">
         <ul>
           <li>
-            <button class="btn-account">
-              <a href="login.php  ">Connectez-vous</a>
-            </button>
+            <a href="login.php" class="btn-header-account">Connectez-vous</a>
           </li>
           <li>
-            <button class="btn-create-account">
-              <a href="account.php">Créer votre compte</a>
-            </button>
+            <a href="account.php" class="btn-header-create-account">Créer votre compte</a>
           </li>
         </ul>
       </nav>
@@ -62,7 +54,6 @@
         <div class="container-settings-add">
           <div class="container-settings">
             <button class="btn-settings">
-              <img src="images/icon-settings.png" alt="Boutton de paramètres" class="change-color" />
               Vos paramètres
             </button>
           </div>
@@ -72,23 +63,21 @@
             <div class="dropdown">
               <button class="dropbtn">Tags</button>
               <div class="dropdown-content">
-                <a href="#" class="tag-list">Sport</a>
-                <a href="#" class="tag-list-1">Film</a>
-                <a href="#" class="tag-list-2">Culture</a>
-                <a href="#" class="tag-list">Social</a>
-                <a href="#" class="tag-list">Evenements</a>
-                <a href="#" class="tag-list">Série</a>
-                <a href="#" class="tag-list">Art</a>
-                <a href="#" class="tag-list">Animaux</a>
-                <a href="#" class="tag-list">Nature</a>
-                <a href="#" class="tag-list">France</a>
+                <a href="#" class="tag-list">sport</a>
+                <a href="#" class="tag-list">film</a>
+                <a href="#" class="tag-list">culture</a>
+                <a href="#" class="tag-list">social</a>
+                <a href="#" class="tag-list">evenements</a>
+                <a href="#" class="tag-list">série</a>
+                <a href="#" class="tag-list">art</a>
+                <a href="#" class="tag-list">animaux</a>
+                <a href="#" class="tag-list">nature</a>
+                <a href="#" class="tag-list">france</a>
               </div>
             </div>
           </div>
           <br />
           <?php
-          require_once 'connexion.php';
-
           $requete = $database->prepare("SELECT * FROM post INNER JOIN users ON post.user_id = users.id ORDER BY date DESC");
           $requete->execute();
           $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -97,7 +86,7 @@
             <div class="card-post">
               <div class="post">
                 <div class="post-description">
-                  <img style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
+                  <img alt="" style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
                   <p>
                     <?php echo $post['pseudo']; ?>
                   </p>
@@ -114,7 +103,9 @@
                   <?php echo $post['date']; ?>
                 </p>
                 <br>
-                <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
+                <?php if (!empty($post['image'])): ?>
+                  <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+                <?php endif; ?>
               </div>
             </div>
           <?php } ?>
@@ -139,25 +130,25 @@
           <h2>Ajouter un post</h2>
           <select name="tag">
             <option value="" disabled selected>Choisissez un tag</option>
-            <option name="tag" value="sport">Sport</option>
-            <option name="tag" value="film">Film</option>
-            <option name="tag" value="culture">Culture</option>
-            <option name="tag" value="social">Social</option>
-            <option name="tag" value="evenements">Evenements</option>
-            <option name="tag" value="serie">Série</option>
-            <option name="tag" value="art">Art</option>
-            <option name="tag" value="animaux">Animaux</option>
-            <option name="tag" value="nature">Nature</option>
-            <option name="tag" value="france">France</option>
+            <option class="tag" value="sport">sport</option>
+            <option class="tag" value="film">film</option>
+            <option class="tag" value="culture">culture</option>
+            <option class="tag" value="social">social</option>
+            <option class="tag" value="evenements">evenements</option>
+            <option class="tag" value="serie">série</option>
+            <option class="tag" value="art">art</option>
+            <option class="tag" value="animaux">animaux</option>
+            <option class="tag" value="nature">nature</option>
+            <option class="tag" value="france">france</option>
           </select>
           <input type="hidden" name="user" value="<?php echo $user_id; ?>">
           <h5>Message :</h5>
           <textarea id="message" name="content" rows="10" cols="50"></textarea>
           <h5>Image :</h5>
-          <textarea type="url" name="image" placeholder="Entrez l'URL de l'image" rows="10" cols="50"></textarea>
+          <textarea name="image" placeholder="Entrez l'URL de l'image" rows="10" cols="50"></textarea>
           <div>
-            <button id="cancel-btn" value="cancel"><a href="index.php">Annuler</a></button>
-            <button id="confirm-btn" value="default">Poster</button>
+            <a href="index.php" class="cancel-btn">Annuler</a>
+            <button class="confirm-btn" value="default">Poster</button>
           </div>
         </form>
       </dialog>
@@ -174,49 +165,42 @@
       <nav class="nav-bar">
         <ul>
           <li>
-            <button class="btn-create-account">
-              <a href="profil.php?pseudo=<?php echo $user['pseudo']; ?>">Voir votre profil</a>
-            </button>
-          </li>
-          <li>
-            <button class="btn-account">
-              <a href="login.php  ">Connectez-vous</a>
-            </button>
+            <a href="profil.php?pseudo=<?php echo $user['pseudo']; ?>" class="btn-header-create-account">Voir votre
+              profil</a>
           </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="container-main">
       <div class="container-post-settings">
         <div class="container-settings-add">
           <div class="container-settings">
             <button class="btn-settings">
-              <img src="images/icon-settings.png" alt="Boutton de paramètres" class="change-color" />
               Vos paramètres
             </button>
           </div>
         </div>
         <div class="container-post">
-          <div class="container">
+          <div class="container-tag-list">
             <div class="dropdown">
               <button class="dropbtn">Tags</button>
               <div class="dropdown-content">
-                <a href="#" class="tag-list">Sport</a>
-                <a href="#" class="tag-list-1">Film</a>
-                <a href="#" class="tag-list-2">Culture</a>
-                <a href="#" class="tag-list">Social</a>
-                <a href="#" class="tag-list">Evenements</a>
-                <a href="#" class="tag-list">Série</a>
-                <a href="#" class="tag-list">Art</a>
-                <a href="#" class="tag-list">Animaux</a>
-                <a href="#" class="tag-list">Nature</a>
-                <a href="#" class="tag-list">France</a>
+                <a href="#" class="tag-list" data-tag="sport">sport</a>
+                <a href="#" class="tag-list" data-tag="film">film</a>
+                <a href="#" class="tag-list" data-tag="culture">culture</a>
+                <a href="#" class="tag-list" data-tag="social">social</a>
+                <a href="#" class="tag-list" data-tag="evenements">evenements</a>
+                <a href="#" class="tag-list" data-tag="serie">série</a>
+                <a href="#" class="tag-list" data-tag="art">art</a>
+                <a href="#" class="tag-list" data-tag="animaux">animaux</a>
+                <a href="#" class="tag-list" data-tag="nature">nature</a>
+                <a href="#" class="tag-list" data-tag="france">france</a>
               </div>
             </div>
+            <button class="btn-reset" id="reset-btn">Reset</button>
           </div>
           <br />
           <?php
-          require_once 'connexion.php';
 
           $requete = $database->prepare("SELECT * FROM post INNER JOIN users ON post.user_id = users.id ORDER BY date DESC");
           $requete->execute();
@@ -226,7 +210,7 @@
             <div class="card-post">
               <div class="post">
                 <div class="post-description">
-                  <img style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
+                  <img alt="" style="width: 60px; height:60px;" src="<?php echo $post['image_profil']; ?>">
                   <p>
                     <?php echo $post['pseudo']; ?>
                   </p>
@@ -242,11 +226,13 @@
                 <p>
                   <?php echo $post['date']; ?>
                 </p>
-                <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
+                <?php if (!empty($post['image'])): ?>
+                  <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+                <?php endif; ?>
                 <?php
                 if ($_SESSION['id'] == $post['user_id']) {
                   ?>
-                  <div id="icon-cross">
+                  <div class="icon-cross">
                     <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
                   </div>
                   <?php
@@ -255,13 +241,12 @@
               </div>
             </div>
             <div class="modal">
-              <dialog id="modalSup<?php echo $post['id']; ?>">
+              <dialog class="modalSup<?php echo $post['id']; ?>">
                 <form class="modal-sup" action="delete.php" method="POST">
                   <h2>Voulez-vous retirer ce post</h2>
                   <div>
-                    <button id="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
-                    <button id="confirm-btn" value="default" type="submit"><a
-                        href="delete.php?id=<?php echo $post['id_post'] ?>">Oui</a></button>
+                    <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
+                    <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
                   </div>
                 </form>
               </dialog>

@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Profil</title>
-  <link rel="shortcut icon" href="images/logo-socialup.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/logo-socialup.png" type="image/x-icon">
 </head>
 
 <body>
@@ -45,45 +45,46 @@
       <h2 class="h2-profil">
         <?php echo $utilisateur['prenom']; ?>
         <?php echo $utilisateur['nom']; ?>
-        </hZ>
-        <h3 class="h3-profil">Vos Posts</h3>
-        <?php
-        foreach ($posts as $post) { ?>
-          <div class="card-post">
-            <div class="post">
-              <div class="post-description">
+      </h2>
+      <h3 class="h3-profil">Vos Posts</h3>
+      <?php
+      foreach ($posts as $post) { ?>
+        <div class="card-post">
+          <div class="post">
+            <div class="post-description">
+            </div>
+          </div>
+          <br>
+          <p>
+            <span class="tag">
+              <?php echo $post['tag']; ?>
+            </span>
+            <?php echo $post['content']; ?>
+          </p>
+          <p> le
+            <?php echo $post['date']; ?>
+          </p>
+          <?php if (!empty($post['image'])): ?>
+            <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+          <?php endif; ?>
+          <div class="icon-cross">
+            <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
+          </div>
+        </div>
+        <div class="modal">
+          <dialog class="modalSup<?php echo $post['id']; ?>">
+            <form class="modal-sup" action="delete.php" method="POST">
+              <h2>Voulez-vous retirer ce post</h2>
+              <div>
+                <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
+                <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
               </div>
-            </div>
-            <br>
-            <p>
-              <span class="tag">
-                <?php echo $post['tag']; ?>
-              </span>
-              <?php echo $post['content']; ?>
-            </p>
-            <p> le
-              <?php echo $post['date']; ?>
-            </p>
-            <img style="width: 100%; margin-top: 2%; margin-bottom: 2%;" src="<?php echo $post['image']; ?>">
-            <div id="icon-cross">
-              <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
-            </div>
-          </div>
-          <div class="modal">
-            <dialog id="modalSup<?php echo $post['id']; ?>">
-              <form class="modal-sup" action="delete.php" method="POST">
-                <h2>Voulez-vous retirer ce post</h2>
-                <div>
-                  <button id="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
-                  <button id="confirm-btn" value="default" type="submit"><a
-                      href="delete-profil.php?id=<?php echo $post['id_post'] ?>">Oui</a></button>
-                </div>
-              </form>
-            </dialog>
-          </div>
-          <?php
-        }
-        ?>
+            </form>
+          </dialog>
+        </div>
+        <?php
+      }
+      ?>
     </div>
   </main>
   <script src="script.js"></script>

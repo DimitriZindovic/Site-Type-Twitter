@@ -4,6 +4,19 @@ header {
   align-items: center;
   padding: 5px;
   background-color: var(--color-navbar);
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+}
+
+.header-boot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: var(--color-navbar);
+  position: relative;
+  width: 100vw;
 }
 
 .logo {
@@ -18,11 +31,13 @@ header {
   display: flex;
   height: 0;
   overflow: hidden;
-  transition: height 0.2s;
+  transition: width 2s;
 }
 
 .nav-bar.active {
-  height: 250px;
+  height: 100vh;
+  width: 350px;
+  position: fixed;
 }
 
 .nav-bar ul {
@@ -53,10 +68,15 @@ header {
   .nav-bar {
     position: absolute;
     top: 70px;
-    left: 0;
-    right: 0;
-    width: 100vw;
+    left: -350px;
+    width: 350px;
+    height: 100vh;
     background-color: var(--color-navbar);
+    transition: left 0.2s;
+  }
+
+  .nav-bar.active {
+    left: 0;
   }
 
   .nav-bar ul {
@@ -70,9 +90,21 @@ header {
   .nav-bar ul li {
     margin-bottom: 20px;
   }
+
+  header {
+    width: 100vw;
+  }
+
+  .btn-account {
+    position: relative;
+  }
+
+  .btn-create-account {
+    position: relative;
+  }
 }
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 700px) {
   .nav-bar {
     display: flex;
     height: auto;

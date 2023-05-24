@@ -50,21 +50,23 @@ textarea {
   font-family: "Montserrat", sans-serif !important;
 }
 
-#confirm-btn {
+.confirm-btn {
   border: 2px solid var(--color-app);
   color: var(--color-text);
   padding: 10px;
   background-color: var(--color-settings);
   border-radius: 50px;
+  font-size: 16px;
 }
 
-#confirm-btn:hover {
+.confirm-btn:hover {
   background-color: var(--color-app);
   color: var(--color-text);
   transition: all 1s;
+  font-size: 16px;
 }
 
-#cancel-btn {
+.cancel-btn {
   outline: none;
   border: 2px solid rgb(195, 1, 1);
   color: var(--color-text);
@@ -72,10 +74,12 @@ textarea {
   margin-right: 25px;
   background-color: var(--color-settings);
   border-radius: 50px;
+  font-size: 16px;
 }
 
-#cancel-btn:hover {
+.cancel-btn:hover {
   background-color: rgb(195, 1, 1);
   color: var(--color-text);
   transition: all 1s;
+  font-size: 16px;
 }

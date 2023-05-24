@@ -4,7 +4,6 @@
 @import url("components/buttons.css");
 @import url("components/avatar.css");
 @import url("components/navbar.css");
-@import url("components/section.css");
 @import url("components/post.css");
 @import url("components/bootrsap.css");
 @import url("components/modal.css");
@@ -21,7 +20,7 @@ html,
 body {
   height: 100vh inherit;
   font-family: "Montserrat", sans-serif !important;
-  background-color: white;
+  background-color: var(--color-post);
 }
 
 :root {
@@ -30,4 +29,14 @@ body {
   --color-text: white;
   --color-settings: #323232;
   --color-post: #414141;
+  --color-tag-sport: #ff0000;
+  --color-tag-film: #00ff00;
+  --color-tag-culture: #0000ff;
+  --color-tag-evenements: #388f96;
+  --color-tag-social: #00ff00;
+  --color-tag-série: #ba0505;
+  --color-tag-art: #890b6e;
+  --color-tag-animaux: #c36628;
+  --color-tag-nature: #117100;
+  --color-tag-france: #000095;
 }
