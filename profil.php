@@ -21,18 +21,22 @@
   <?php
   session_start();
 
+  require_once 'connexion.php';
+
   $user_id = $_SESSION['id'];
 
+  $requete_pseudo = $database->prepare("SELECT image_profil FROM users INNER JOIN post ON post.user_id = users.id WHERE users.id = :user_id");
+  $requete_pseudo->bindParam(':user_id', $user_id);
+  $requete_pseudo->execute();
+  $user = $requete_pseudo->fetch(PDO::FETCH_ASSOC);
   ?>
   <div class="container-avatar">
-    <img src="images/image-profil-full.jpeg" alt="Avatar" class="avatar-profil" />
+    <img alt="" src="<?php echo $user['image_profil']; ?>" class="avatar-profil">
   </div>
 
   <main>
     <div class="container-description">
       <?php
-      require_once 'connexion.php';
-
       $requete = $database->prepare("SELECT * FROM post INNER JOIN users ON post.user_id = users.id WHERE post.user_id = $user_id ORDER BY date DESC");
       $requete->execute();
       $posts = $requete->fetchAll(PDO::FETCH_ASSOC);

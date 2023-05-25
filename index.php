@@ -104,7 +104,7 @@
                 </p>
                 <br>
                 <?php if (!empty($post['image'])): ?>
-                  <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+                  <img alt="" style="max-width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
                 <?php endif; ?>
               </div>
             </div>
@@ -126,9 +126,12 @@
     </button>
     <div class="modal">
       <dialog id="modalAdd">
-        <form action="post.php" class="modal-add" method="POST">
+        <div class="modal-cancel">
+          <div class="cancel-btn" onclick="openModal(<?php echo $post['id']; ?>)"></div>
+        </div>
+        <form action="post.php" class="modal-add" method="POST" enctype="multipart/form-data">
           <h2>Ajouter un post</h2>
-          <select name="tag">
+          <select name=" tag">
             <option value="" disabled selected>Choisissez un tag</option>
             <option class="tag" value="sport">sport</option>
             <option class="tag" value="film">film</option>
@@ -143,13 +146,10 @@
           </select>
           <input type="hidden" name="user" value="<?php echo $user_id; ?>">
           <h5>Message :</h5>
-          <textarea id="message" name="content" rows="10" cols="50"></textarea>
-          <h5>Image :</h5>
-          <textarea name="image" placeholder="Entrez l'URL de l'image" rows="10" cols="50"></textarea>
-          <div>
-            <a href="index.php" class="cancel-btn">Annuler</a>
-            <button class="confirm-btn" value="default">Poster</button>
-          </div>
+          <textarea id="message" placeholder="Entrez votre message" name="content" rows="10" cols="50"></textarea>
+          <label for="image">Image :</label>
+          <input class="image-upload" type="file" name="image" accept=".jpg, .jpeg, .png, .gif">
+          <button class="confirm-btn" value="default" type="submit">Poster</button>
         </form>
       </dialog>
     </div>
@@ -227,7 +227,7 @@
                   <?php echo $post['date']; ?>
                 </p>
                 <?php if (!empty($post['image'])): ?>
-                  <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+                  <img alt="" style="max-width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
                 <?php endif; ?>
                 <?php
                 if ($_SESSION['id'] == $post['user_id']) {
@@ -242,10 +242,12 @@
             </div>
             <div class="modal">
               <dialog class="modalSup<?php echo $post['id']; ?>">
+                <div class="modal-cancel">
+                  <div class="cancel-btn" onclick="closeModal(<?php echo $post['id']; ?>)"></div>
+                </div>
                 <form class="modal-sup" action="delete.php" method="POST">
-                  <h2>Voulez-vous retirer ce post</h2>
+                  <h2 class="h2-modal">Voulez-vous retirer ce post</h2>
                   <div>
-                    <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
                     <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
                   </div>
                 </form>

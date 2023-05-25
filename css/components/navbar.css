@@ -95,11 +95,11 @@ header {
     width: 100vw;
   }
 
-  .btn-account {
+  .btn-header-account {
     position: relative;
   }
 
-  .btn-create-account {
+  .btn-header-create-account {
     position: relative;
   }
 }

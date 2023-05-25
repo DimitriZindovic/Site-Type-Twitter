@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 24, 2023 at 08:31 PM
+-- Generation Time: May 25, 2023 at 02:20 AM
 -- Server version: 5.7.39
 -- PHP Version: 8.2.0
 
@@ -32,7 +32,7 @@ CREATE TABLE `post` (
   `tag` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `date` datetime NOT NULL,
-  `image` text,
+  `image` varchar(255) DEFAULT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,16 +41,14 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `tag`, `content`, `date`, `image`, `user_id`) VALUES
-(27, 'film', 'efaffeef', '2023-04-14 15:26:20', NULL, 5),
-(28, 'culture', 'efezfzef', '2023-04-14 15:39:21', 'images/img_643973a95a1ef.jpeg', 6),
-(29, 'film', 'vvrerbv', '2023-04-14 15:41:20', NULL, 7),
-(30, 'sport', 'vvrerbv', '2023-04-14 15:41:38', NULL, 7),
-(31, 'social', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut debitis beatae nemo nostrum modi ad quo necessitatibus! Corporis ad neque nemo asperiores doloremque ex laboriosam animi sequi, dolorum accusamus quasi.', '2023-04-14 16:20:03', NULL, 6),
-(32, 'sport', 'vjrfjrbjbhbvjksdq', '2023-04-17 13:06:36', NULL, 6),
-(33, 'evenements', 'frtethethbet', '2023-05-11 11:51:35', NULL, 6),
-(34, 'sport', 'zvsdvsdv', '2023-05-17 15:28:47', NULL, 6),
-(36, 'evenements', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id corrupti, aperiam at ea maiores soluta hic nihil natus sed modi quae. Officiis facilis, unde repellendus nostrum eum enim magni atque.', '2023-05-22 14:54:09', 'images/img_646b821194710.jpeg', 6),
-(42, 'film', 'Contenu du post prédéfini', '2023-05-22 12:00:00', '', 1);
+(65, 'evenements', 'Premier Post', '2023-05-25 01:24:42', NULL, 12),
+(66, 'sport', 'J\'aime le tennis', '2023-05-25 01:25:52', 'images/img_646eb9206f01d.jpeg', 12),
+(67, 'france', 'Bientôt les jo', '2023-05-25 01:30:56', 'images/img_646eba50b1ba3.jpg', 12),
+(68, 'sport', 'J\'aime le PSG', '2023-05-25 01:32:51', 'images/img_646ebac344942.jpg', 13),
+(69, 'animaux', 'J\'aime les chats', '2023-05-25 01:36:05', 'images/img_646ebb85b90c3.jpg', 14),
+(71, 'evenements', 'J\'adore ce site', '2023-05-25 01:37:36', NULL, 14),
+(72, 'evenements', 'Coucou', '2023-05-25 01:40:41', NULL, 15),
+(73, 'art', 'Magnifique peinture', '2023-05-25 01:42:49', 'images/img_646ebd1987175.jpg', 15);
 
 -- --------------------------------------------------------
 
@@ -65,7 +63,7 @@ CREATE TABLE `users` (
   `pseudo` varchar(255) NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
-  `image_profil` text NOT NULL
+  `image_profil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -73,10 +71,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nom`, `prenom`, `pseudo`, `email`, `password`, `image_profil`) VALUES
-(1, 'Computer', 'Computer', 'COMPUTER', 'efzefe@gmail.com', '$2y$10$CpwTYt.Wtm6p3fkFF1gxjuHTTZmLUgeUJ9MtmCc63fgdD74J.lfQ6', 'https://media.istockphoto.com/id/1183337149/fr/photo/affichage-dordinateur-avec-l%C3%A9cran-blanc-blanc-moniteur-de-nordinateur-isol%C3%A9-sur-le-fond.jpg?b=1&s=612x612&w=0&k=20&c=uE91wT7K_jSsPqTS4Raw1VuhLo6qEfbClgSmayvvdds='),
-(5, 'frzrz', 'fzazrfr', 'RGE', 'test@gmail.com', '$2y$10$Q0rh4PqjoFgodNvqhRn9FuI0O9GWaCLnD8vlWXs0amhOKvzjTWZVO', 'https://images.pexels.com/photos/16357548/pexels-photo-16357548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-(6, 'Zindovic', 'Dimitri', 'DZI', 'dimitri.zindovic@gmail.com', '$2y$10$NGOKkE/9ntE6mmOWPv5ZWOMXoSZge6MBssYb/BCbhuqeRwJ1EKOo2', 'https://images.pexels.com/photos/12996230/pexels-photo-12996230.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-(7, 'Daumas', 'Basile', 'BDA', 'basile.daumas@gmail.com', '$2y$10$G8FlcgWjFRJnQLNsIoTOTuJ17HgUxHIFXdd4a7lowovjBjlH.2xne', 'https://images.pexels.com/photos/15989106/pexels-photo-15989106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+(12, 'Zindovic', 'Dimitri', 'DZI', 'dimitri.zindovic@gmail.com', '$2y$10$zQrBt7f2LxdBJWZKrK5t3.mkUyUUJApUIWc1DKiL/d70V7ISeahdO', 'images/img_646eb8c12033c.jpeg'),
+(13, 'Allio', 'Lilian', 'Le L', 'lilian.allio@gmail.com', '$2y$10$v4.uksYifJmXpxOzkb/bMOg81vAp198TbqNkErSlRTYDOqysbMTea', 'images/img_646eba9dd0510.jpg'),
+(14, 'Daumas', 'Basile', 'BDSE', 'basile.daumas@gmail.com', '$2y$10$cPkFQ4zMAS8Tvr7H0zKcL.K0BrTSKhKQTPhF46Kmbri4fh.I/Wy5G', 'images/img_646ebb5903c62.jpg'),
+(15, 'Proutière', 'Chris', 'CPR', 'chris.proutiere@gmail.com', '$2y$10$VP487lJcvspAUgeKd/f/m.DNVDilFkirdaqucac.yHuZJVd/yh8ba', 'images/img_646ebc5f50cfa.jpg');
 
 --
 -- Indexes for dumped tables
@@ -102,13 +100,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

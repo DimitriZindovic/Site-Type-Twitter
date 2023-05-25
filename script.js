@@ -42,16 +42,6 @@ resetButton.addEventListener("click", (event) => {
   });
 });
 
-function openModal(postId) {
-  const modal = document.querySelector(".modalSup" + postId);
-  modal.showModal();
-}
-
-function closeModal(postId) {
-  const modal = document.querySelector(".modalSup" + postId);
-  modal.close();
-}
-
 const hamburger = document.querySelector(".hamburger");
 const navBar = document.querySelector(".nav-bar");
 const lines = document.querySelectorAll(".line");
@@ -72,6 +62,28 @@ window.addEventListener("click", (event) => {
   }
 });
 
+function openModal(postId) {
+  const modal = document.querySelector(".modalSup" + postId);
+  modal.showModal();
+}
+
+function closeModal(id) {
+  const modal = document.querySelector(".modalSup" + id);
+  modal.close();
+}
+
+const btnAdd = document.getElementById("showModal");
+const modalAdd = document.getElementById("modalAdd");
+const cancelBtn = modalAdd.querySelector(".cancel-btn");
+
+btnAdd.addEventListener("click", () => {
+  modalAdd.showModal();
+});
+
+cancelBtn.addEventListener("click", () => {
+  modalAdd.close();
+});
+
 const messageInput = document.getElementById("message");
 
 messageInput.addEventListener("input", function () {
@@ -82,16 +94,3 @@ const savedMessage = localStorage.getItem("message");
 if (savedMessage) {
   messageInput.value = savedMessage;
 }
-
-const btnAdd = document.getElementById("showModal");
-const modalAdd = document.getElementById("modalAdd");
-const confirmBtn = modalAdd.querySelectorAll(".confirm-btn");
-const cancelBtn = modalAdd.querySelectorAll(".cancel-btn");
-
-btnAdd.addEventListener("click", () => {
-  modalAdd.showModal();
-});
-
-cancelBtn.addEventListener("click", () => {
-  modalAdd.close();
-});

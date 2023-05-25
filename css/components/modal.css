@@ -19,9 +19,10 @@ dialog {
   justify-content: center;
   gap: 1rem;
   width: 400px;
-  height: 350px;
+  height: 22%;
   align-items: center;
   padding: 1rem;
+  border: 2px solid var(--color-settings);
 }
 
 .modal-sup {
@@ -32,7 +33,7 @@ dialog {
   justify-content: center;
   gap: 2rem;
   width: 400px;
-  height: 200px;
+  height: 190px;
   align-items: center;
   padding: 1rem;
 }
@@ -40,7 +41,7 @@ dialog {
 textarea {
   width: 100%;
   outline: none;
-  height: 150px;
+  height: 40px;
   color: var(--color-text);
   padding: 12px 20px;
   box-sizing: border-box;
@@ -67,19 +68,50 @@ textarea {
 }
 
 .cancel-btn {
-  outline: none;
-  border: 2px solid rgb(195, 1, 1);
-  color: var(--color-text);
-  padding: 10px;
-  margin-right: 25px;
-  background-color: var(--color-settings);
-  border-radius: 50px;
-  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 0;
 }
 
-.cancel-btn:hover {
-  background-color: rgb(195, 1, 1);
-  color: var(--color-text);
-  transition: all 1s;
-  font-size: 16px;
+.cancel-btn:before,
+.cancel-btn:after {
+  content: "";
+  width: 20px;
+  height: 5px;
+  background-color: rgb(194, 194, 194);
+  position: absolute;
+  top: calc(50% - 1px);
+}
+
+.cancel-btn:before {
+  transform: rotate(45deg);
+}
+
+.cancel-btn:after {
+  transform: rotate(-45deg);
+}
+
+.modal-cancel {
+  display: flex;
+  background-color: var(--color-settings);
+  justify-content: flex-end;
+  border: 2px solid var(--color-settings);
+}
+
+.h2-modal {
+  text-align: center;
+}
+
+input.image-upload {
+  display: none;
+}
+
+input.image-upload {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color-app);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
