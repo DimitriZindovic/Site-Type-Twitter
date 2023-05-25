@@ -115,3 +115,25 @@ input.image-upload {
   border: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 468px) {
+  .modal-add {
+    width: 280px;
+    margin: auto;
+    height: 100%;
+  }
+
+  .modal-sup {
+    width: 280px;
+  }
+
+  .btn-create-account {
+    padding: 2px;
+    font-size: 10px;
+  }
+
+  .btn-account {
+    padding: 2px;
+    font-size: 10px;
+  }
+}
