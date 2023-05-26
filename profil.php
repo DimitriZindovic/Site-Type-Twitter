@@ -79,10 +79,12 @@
           </div>
           <div class="modal">
             <dialog class="modalSup<?php echo $post['id']; ?>">
+              <div class="modal-cancel">
+                <div class="cancel-btn" onclick="closeModal(<?php echo $post['id']; ?>)"></div>
+              </div>
               <form class="modal-sup" action="delete.php" method="POST">
-                <h2>Voulez-vous retirer ce post</h2>
+                <h2 class="h2-modal">Voulez-vous retirer ce post</h2>
                 <div>
-                  <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
                   <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
                 </div>
               </form>
