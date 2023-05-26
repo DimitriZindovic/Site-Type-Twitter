@@ -28,7 +28,7 @@
 .container-settings {
   display: flex;
   flex-direction: column;
-  height: 540px;
+  height: 1200px;
 }
 
 .add-post {
