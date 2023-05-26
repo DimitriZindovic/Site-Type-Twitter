@@ -31,7 +31,13 @@
 @media (max-width: 1024px) {
   .h3-profil {
     width: 25%;
-    margin-top: 5%;
+    margin-top: 8%;
     margin-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .h3-profil {
+    width: 40%;
   }
 }

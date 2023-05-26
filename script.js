@@ -42,6 +42,25 @@ resetButton.addEventListener("click", (event) => {
   });
 });
 
+const selectElement = document.querySelector(".tag-select");
+
+selectElement.addEventListener("change", function () {
+  const selectedValue = selectElement.value;
+
+  localStorage.setItem("selectedTag", selectedValue);
+});
+
+const savedValue = localStorage.getItem("selectedTag");
+if (savedValue) {
+  selectElement.value = savedValue;
+}
+
+const messageInput = document.getElementById("message");
+
+messageInput.addEventListener("input", function () {
+  localStorage.setItem("message", messageInput.value);
+});
+
 const hamburger = document.querySelector(".hamburger");
 const navBar = document.querySelector(".nav-bar");
 const lines = document.querySelectorAll(".line");
@@ -82,12 +101,6 @@ btnAdd.addEventListener("click", () => {
 
 cancelBtn.addEventListener("click", () => {
   modalAdd.close();
-});
-
-const messageInput = document.getElementById("message");
-
-messageInput.addEventListener("input", function () {
-  localStorage.setItem("message", messageInput.value);
 });
 
 const savedMessage = localStorage.getItem("message");

@@ -131,7 +131,7 @@
         </div>
         <form action="post.php" class="modal-add" method="POST" enctype="multipart/form-data">
           <h2>Ajouter un post</h2>
-          <select name=" tag">
+          <select class="tag-select" name=" tag">
             <option value="" disabled selected>Choisissez un tag</option>
             <option class="tag" value="sport">sport</option>
             <option class="tag" value="film">film</option>

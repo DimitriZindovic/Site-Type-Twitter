@@ -9,7 +9,6 @@
   background-color: var(--color-post);
   color: var(--color-text);
   text-decoration: none;
-  height: 100vh;
 }
 
 .container-settings-add {
