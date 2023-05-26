@@ -30,6 +30,7 @@ a {
   padding: 8px;
   outline: none;
   transition: all 1s;
+  text-align: center;
 }
 
 .btn-account:hover {

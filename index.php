@@ -22,7 +22,7 @@
       <dialog id="modalLogin">
         <form class="modal-sup">
           <h2>Vous devez soit :</h2>
-          <div>
+          <div class="header-btn">
             <a href="account.php" class="btn-create-account">Créer votre compte</a>
             <a href="login.php" class="btn-account">Connectez-vous</a>
           </div>

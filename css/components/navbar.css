@@ -123,3 +123,9 @@ header {
     margin-right: 20px;
   }
 }
+
+.header-btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
