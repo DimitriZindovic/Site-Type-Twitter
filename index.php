@@ -116,7 +116,7 @@
   } else {
     $user_id = $_SESSION['id'];
 
-    $requete_pseudo = $database->prepare("SELECT pseudo FROM users INNER JOIN post ON post.user_id = users.id WHERE users.id = :user_id");
+    $requete_pseudo = $database->prepare("SELECT pseudo FROM users WHERE id = :user_id");
     $requete_pseudo->bindParam(':user_id', $user_id);
     $requete_pseudo->execute();
     $user = $requete_pseudo->fetch(PDO::FETCH_ASSOC);

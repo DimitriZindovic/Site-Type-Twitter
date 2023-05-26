@@ -25,7 +25,7 @@
 
   $user_id = $_SESSION['id'];
 
-  $requete_pseudo = $database->prepare("SELECT image_profil FROM users INNER JOIN post ON post.user_id = users.id WHERE users.id = :user_id");
+  $requete_pseudo = $database->prepare("SELECT image_profil FROM users WHERE id = :user_id");
   $requete_pseudo->bindParam(':user_id', $user_id);
   $requete_pseudo->execute();
   $user = $requete_pseudo->fetch(PDO::FETCH_ASSOC);
@@ -37,11 +37,11 @@
   <main>
     <div class="container-description">
       <?php
-      $requete = $database->prepare("SELECT * FROM post INNER JOIN users ON post.user_id = users.id WHERE post.user_id = $user_id ORDER BY date DESC");
+      $requete = $database->prepare("SELECT * FROM post INNER JOIN users ON post.user_id = users.id ORDER BY date DESC");
       $requete->execute();
       $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-      $requete_prenom_nom = $database->prepare("SELECT users.prenom, users.nom FROM users INNER JOIN post ON post.user_id = users.id WHERE users.id = :user_id");
+      $requete_prenom_nom = $database->prepare("SELECT nom, prenom FROM users WHERE id = :user_id");
       $requete_prenom_nom->bindParam(':user_id', $user_id);
       $requete_prenom_nom->execute();
       $utilisateur = $requete_prenom_nom->fetch(PDO::FETCH_ASSOC);
@@ -52,41 +52,44 @@
       </h2>
       <h3 class="h3-profil">Vos Posts</h3>
       <?php
-      foreach ($posts as $post) { ?>
-        <div class="card-post">
-          <div class="post">
-            <div class="post-description">
+
+      foreach ($posts as $post) {
+        if ($_SESSION['id'] == $post['user_id']) { ?>
+          <div class="card-post">
+            <div class="post">
+              <div class="post-description">
+              </div>
+            </div>
+            <br>
+            <p>
+              <span class="tag">
+                <?php echo $post['tag']; ?>
+              </span>
+              <?php echo $post['content']; ?>
+            </p>
+            <p> le
+              <?php echo $post['date']; ?>
+            </p>
+            <?php if (!empty($post['image'])): ?>
+              <img alt="" style="max-width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
+            <?php endif; ?>
+            <div class="icon-cross">
+              <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
             </div>
           </div>
-          <br>
-          <p>
-            <span class="tag">
-              <?php echo $post['tag']; ?>
-            </span>
-            <?php echo $post['content']; ?>
-          </p>
-          <p> le
-            <?php echo $post['date']; ?>
-          </p>
-          <?php if (!empty($post['image'])): ?>
-            <img alt="" style="width: 100%; margin-top: 2%; margin-bottom: 2%" src="<?php echo $post['image']; ?>">
-          <?php endif; ?>
-          <div class="icon-cross">
-            <div class="red-cross" onclick="openModal(<?php echo $post['id']; ?>)"></div>
+          <div class="modal">
+            <dialog class="modalSup<?php echo $post['id']; ?>">
+              <form class="modal-sup" action="delete.php" method="POST">
+                <h2>Voulez-vous retirer ce post</h2>
+                <div>
+                  <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
+                  <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
+                </div>
+              </form>
+            </dialog>
           </div>
-        </div>
-        <div class="modal">
-          <dialog class="modalSup<?php echo $post['id']; ?>">
-            <form class="modal-sup" action="delete.php" method="POST">
-              <h2>Voulez-vous retirer ce post</h2>
-              <div>
-                <button class="cancel-btn" value="cancel" onclick="closeModal()">Non</button>
-                <a href="delete.php?id=<?php echo $post['id_post'] ?>" class="confirm-btn">Oui</a>
-              </div>
-            </form>
-          </dialog>
-        </div>
-        <?php
+          <?php
+        }
       }
       ?>
     </div>
